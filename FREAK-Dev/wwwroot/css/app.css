@@ -9,10 +9,9 @@ a {
     text-decoration: underline;
 }
 
-.source-code-pro-<uniquifier > {
+.source-code-pro {
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
-    font-weight: <weight>;
     font-style: normal;
 }
 .navcon a {

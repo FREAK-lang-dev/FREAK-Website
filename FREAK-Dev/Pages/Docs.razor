@@ -2,7 +2,7 @@
 @using FREAK_Dev.Components
 @inject IJSRuntime JSRuntime
 <PageTitle>FREAK - Docs</PageTitle>
-<main class="AAH source-code-pro-<uniquifier>">
+<main class="AAH">
 <h1>FREAK FULL LANGUAGE BIBLE</h1>
 <hr />
 <h2>The Complete Authoritative Reference — Full Language, No Exclusions</h2>
@@ -16,6 +16,7 @@
         <div style="display: flex; margin-left: 0.5rem;">
             <a href="/docs#11variables">1.1 Variables</a>
             <a href="/docs#12functions">1.2 Functions</a>
+            <a href="/docs#13types">1.3 Types</a>
         </div>
     </div>
     <hr />
@@ -81,5 +82,100 @@
                 - <strong>{}</strong> and <strong>done</strong> are identical block delimiters
                 </p>
             </section>
+        <section id="13types">
+            <h3> 1.3 Types</h3>
+            <table>
+                <tr>
+                    <th>Freak type</th>
+                    <th>Notes</th>
+                   
+                </tr>
+                <tr>
+                    <td>num</td>
+                    <td>64-bit float. Default numeric type. Context-narrows to int. </td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>64-bit signed integer</td>
+                </tr>
+                <tr>
+                    <td>uint</td>
+                    <td>64-bit unsigned integer</td>
+                </tr>
+                <tr>
+                    <td>tiny</td>
+                    <td>8-bit unsigned (single byte) </td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>64-bit IEEE 754 double (explicit)</td>
+                </tr>
+                <tr>
+                    <td>float32</td>
+                    <td>32-bit IEEE 754 single</td>
+                </tr>
+                <tr>
+                    <td>big</td>
+                    <td>Arbitrary precision integer. Heap-allocated. Never overflows.</td>
+                </tr>
+                <tr>
+                    <td>word</td>
+                    <td>UTF-8 string. Fat pointer (data + byte_len + char_count).</td>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td>Boolean. true/false/yes/no/hai/iie all valid literals.</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>Unicode scalar value (32-bit codepoint)</td>
+                </tr>
+                <tr>
+                    <td>void</td>
+                    <td>Unit type. Absence of value.</td>
+                </tr>
+                <tr>
+                    <td>[T; N]</td>
+                    <td>Fixed-size array. Stack-allocated. Size known at compile time.</td>
+                </tr>
+                <tr>
+                    <td>(A, B, ...) </td>
+                    <td>Tuple. Heterogeneous fixed grouping. </td>
+                </tr>
+                <tr>
+                    <td>*T</td>
+                    <td>Raw pointer. Only inside trust-me blocks. </td>
+                </tr>
+                <tr>
+                    <td>*mut T</td>
+                    <td>Raw mutable pointer. Only inside trust-me blocks.</td>
+                </tr>
+           
+            </table>
+        </section>
+        <section id="14types">
+            <h3> 1.4 Types - Compund</h3>
+            <p class="pcode">
+                maybe&lt;T&gt;           -- optional value<br />
+                some(42)           -- construct with value<br />
+                nobody             -- empty<br />
+                <br />
+                result&lt;T, E&gt;       -- success or failure<br />
+                ok(42)             -- success<br />
+                err("message")     -- failure<br />
+                <br />
+                List&lt;T&gt;            -- dynamic array<br />
+                [1, 2, 3]          -- literal<br />
+                <br />
+                Map&lt;K, V&gt;          -- hash map<br />
+                { "key": value }   -- literal<br />
+                <br />
+                Set&lt;T&gt;             -- unique value collection<br />
+                Lineup&lt;T&gt;          -- FIFO queue<br />
+                <br />
+                (A, B)             -- tuple<br />
+                (42, "hello")      -- literal<br />
+            </p>
+        </section>
     </section>
 </main>
