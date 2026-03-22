@@ -23,6 +23,39 @@ html {
 .pcode {
     background-color: #040414;
 }
+
+/* Syntax-highlighted code blocks */
+pre.fkcode {
+    background-color: #040414;
+    border: 1px solid #1a0a2e;
+    border-left: 3px solid #f5429b;
+    border-radius: 4px;
+    padding: 0.75rem 1.25rem;
+    overflow-x: auto;
+    font-family: "Source Code Pro", "Consolas", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0.5rem 0 1rem 0;
+    color: #e0e0e0;
+    white-space: pre;
+}
+pre.fkcode code {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    padding: 0;
+}
+
+/* Token colours */
+.kw  { color: #f5429b; }                        /* keywords — hot pink  */
+.ty  { color: #79c0ff; }                        /* types    — sky blue  */
+.str { color: #a5c261; }                        /* strings  — green     */
+.cm  { color: #666688; font-style: italic; }   /* comments — grey      */
+.num { color: #f5a623; }                        /* numbers  — amber     */
+.op  { color: #b57edc; }                        /* operators— purple    */
+.ann { color: #ff7b72; }                        /* @annots  — coral     */
+.bi  { color: #ffd700; }                        /* builtins — gold      */
 .containerish {
     position: relative;
     background-image: linear-gradient(#f5429b, #630a37);
