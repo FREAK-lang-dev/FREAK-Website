@@ -1,15 +1,52 @@
-﻿
+﻿@* // Source - https://stackoverflow.com/a/62769092
+// Posted by MindSwipe, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-03-22, License - CC BY-SA 4.0 *@
+
+@inject IJSRuntime JSRuntime;
 
 <hr />
 <div style="height: 4rem;"></div>
 <div class="navbar" style="display: flex; height: 10rem;">
     <img style="height: inherit; margin-left: 0.5rem;" src="Media/Banner.png" />
     <div style="  display: flex; justify-content: center; align-items: center; margin-left: auto;">
-        <button type="button" class="btn error">License</button>
-        <button type="button" class="btn error">Discord</button>
-        <button type="button" class="btn error">GitHub</button>
+        <button @onclick="Navigate1" type="button" class="btn error">License</button>
+        <button @onclick="Navigate2" type="button" class="btn error">Discord</button>
+        <button @onclick="Navigate3" type="button" class="btn error">GitHub</button>
     </div>
 </div>
+
+@code {
+
+
+    public async Task Navigate1()
+    {
+        // Source - https://stackoverflow.com/a/62769092
+        // Posted by MindSwipe, modified by community. See post 'Timeline' for change history
+        // Retrieved 2026-03-22, License - CC BY-SA 4.0
+
+        await JSRuntime.InvokeAsync<object>("open", "https://github.com/FREAK-lang-dev/Freak-lang/blob/main/LICENSE", "_blank");
+
+    }
+   
+    public async Task Navigate2()
+    {
+        // Source - https://stackoverflow.com/a/62769092
+        // Posted by MindSwipe, modified by community. See post 'Timeline' for change history
+        // Retrieved 2026-03-22, License - CC BY-SA 4.0
+
+        await JSRuntime.InvokeAsync<object>("open", "https://discord.gg/2Nmj6PYPU7", "_blank");
+
+    }
+    public async Task Navigate3()
+    {
+        // Source - https://stackoverflow.com/a/62769092
+        // Posted by MindSwipe, modified by community. See post 'Timeline' for change history
+        // Retrieved 2026-03-22, License - CC BY-SA 4.0
+
+        await JSRuntime.InvokeAsync<object>("open", "https://github.com/FREAK-lang-dev", "_blank");
+
+    }
+}
 @*     <div class="navbar" style="display: flex; height: 4rem;position: fixed; bottom: 0px; justify-content: center;  align-items: center;   ">
 
     <a style="margin-left: 0.5rem;" >©2026 Freak-Lang-Dev / Unknown Cyberia</a>

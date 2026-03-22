@@ -1,13 +1,22 @@
-﻿<div class="navbar" style="display: flex; height: 10rem;">
+﻿@inject NavigationManager navigationManager
+<div class="navbar" style="display: flex; height: 10rem;">
 <img style="height: inherit; margin-left: 0.5rem;" src="Media/Banner2.png" />
     <div style="  display: flex; justify-content: center; align-items: center; margin-left: auto;">
-    <button type="button" class="btn error">Home</button>
-    <button type="button" class="btn error">Docs</button>
-    <button type="button" class="btn error">Discord</button>
-        <button type="button" class="btn error">GitHub</button>
+    <button @onclick="Navigate1" type="button" class="btn error">Home</button>
+        <button @onclick="Navigate2" type="button" class="btn error">Docs</button>
     </div>
 </div>
 <hr />
+@code {
+    public async Task Navigate1()
+    {
+        navigationManager.NavigateTo("/");
+    }
+    public async Task Navigate2()
+    {
+        navigationManager.NavigateTo("/docs");
+    }
+}
 @* <div style="height: fit-content; top: 5rem;  position:absolute;"> *@
  
     @* <h1 style="font-size: 15rem;" class="title">FREAK</h1> *@

@@ -1,0 +1,85 @@
+﻿@page "/docs"
+@using FREAK_Dev.Components
+@inject IJSRuntime JSRuntime
+<PageTitle>FREAK - Docs</PageTitle>
+<main class="AAH source-code-pro-<uniquifier>">
+<h1>FREAK FULL LANGUAGE BIBLE</h1>
+<hr />
+<h2>The Complete Authoritative Reference — Full Language, No Exclusions</h2>
+<h3>Version: Alternative-4 Edition | Status: Authoritative</h3>
+<hr />
+    <label class="title">Contents</label>
+    <div class="containerish navcon">
+        <div style="height: 1.5rem;"></div>
+        <a href="/docs#Section1">Section 1: Syntax</a>
+        <div style="height: 0.5rem;"></div>
+        <div style="display: flex; margin-left: 0.5rem;">
+            <a href="/docs#11variables">1.1 Variables</a>
+            <a href="/docs#12functions">1.2 Functions</a>
+        </div>
+    </div>
+    <hr />
+<label class="title">WHAT THIS DOCUMENT IS</label>
+<p>
+    This is the complete FREAK language specification. It covers every feature of the full language including all features excluded from FREAK Lite.
+
+    FREAK Lite (the Python → C transpiler) implements a subset of this. The full FREAK compiler (self-hosting, written in FREAK itself) implements all of it.
+
+    When building the self-hosting compiler, use this document, not freak-lite-bible.md.
+
+    Pipeline (full compiler): .fk source → Lexer → Parser → Type Checker → Borrow Checker → Anime Layer → IR → Optimizer → Native Binary
+</p>
+    <section id="Section1">
+        <h1>SECTION 1: SYNTAX — COMPLETE REFERENCE</h1>
+        <section id="11variables">
+        <h3> 1.1 Variables</h3>
+        <p class="pcode">
+            pilot x = 42 <br />
+            pilot name = "Takeru"<br />
+            pilot active = true<br />
+            pilot ratio = 3.14<br />
+            pilot x: int = 42           -- explicit type annotation<br />
+            pilot x: word = "hello"
+        </p>
+        <p>
+            - <strong>pilot</strong> is the variable keyword — you are assigning a pilot to a mission<br />
+            - Type annotation optional — inferred from value<br />
+            - Semicolons optional everywhere<br />
+            - Mutable by default<br />
+            - Immutable binding: <strong>fixed pilot x = 42</strong> — cannot be reassigned
+        </p>
+        </section>
+            <section id="12functions">
+                <h3> 1.2 Functions</h3>
+                <p class="pcode">
+                task add(a: num, b: num) -> num { <br />
+                give back a + b<br />
+                }<br />
+                <br />
+                task greet(name: word) -> void {<br />
+                say "Hello, {name}!"<br />
+                }<br />
+                <br />
+                -- Arrow shorthand (single expression)<br />
+                task square(x: num) => x * x<br />
+                <br />
+                -- done keyword closes blocks (identical to })<br />
+                task cube(x: num) -> num<br />
+                give back x * x * x<br />
+                done<br />
+                <br />
+                -- Named parameters at call site<br />
+                task connect(host: word, port: int, timeout: int) -> result&lt;Connection, word&gt;<br />
+                <br />
+                connect(host: "localhost", port: 8080, timeout: 30)<br />
+                </p>
+                <p>
+                - <strong>task</strong> — function keyword<br />
+                - <strong>give back</strong> — return keyword<br />
+                - <strong>say</strong> — print keyword (always available, no import)<br />
+                - String interpolation: <strong>{expr}</strong> inside double-quoted strings<br />
+                - <strong>{}</strong> and <strong>done</strong> are identical block delimiters
+                </p>
+            </section>
+    </section>
+</main>

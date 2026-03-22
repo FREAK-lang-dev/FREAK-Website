@@ -1,8 +1,28 @@
 .navbar {
     background-color: #1a1a3d;
 }
-a :hover{
+a :hover {
     cursor: pointer;
+    text-decoration: underline;
+}
+a {
+    text-decoration: underline;
+}
+
+.source-code-pro-<uniquifier > {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+.navcon a {
+    margin-left: 0.5rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+.pcode {
+    background-color: #040414;
 }
 .containerish {
     position: relative;

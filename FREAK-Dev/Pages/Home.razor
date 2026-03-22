@@ -120,7 +120,11 @@
   <span style="color: #f0146e;"> It's yours. </span>
 </h1>
 <div class="container light">
-    <label class="title">Install</label>
+    <label class="title">MacOS / Linux:</label>
+    <p>curl -fsSL https://raw.githubusercontent.com/FREAK-lang-dev/Freak-lang/main/install.sh | bash</p>
+</div>
+<div class="container light">
+    <label class="title">Windows:</label>
     <p>irm https://raw.githubusercontent.com/FREAK-lang-dev/Freak-lang/main/install.ps1 | iex</p>
 </div>
 <div class="container light">
@@ -128,7 +132,8 @@
     <p>freakc hangar init MyProject</p>
 </div>
 <div style="text-align: center;">
-    <button @onclick="Copy1" type="button" class="btn">Copy installation command</button>
+    <button @onclick="Copy3" type="button" class="btn">Copy MacOS/Linux installation command</button>
+    <button @onclick="Copy1" type="button" class="btn">Copy Windows installation command</button>
     <button @onclick="Copy2" type="button" class="btn">Copy initialization command</button>
 </div>
 <hr />
@@ -143,13 +148,13 @@
     <div style="display: flex; margin-left: 0.5rem;">
         <img style="width: 10rem; height:10rem;" src="Media/AkumarinPFP.png" />
         <div style="flex-direction: column;">
-            <h2>Akumarin Kukino / Megamer-Studios </h2>
+            <h2 style="margin-left: 0.5rem;">Akumarin Kukino / Megamer-Studios </h2>
             <p>I am the C# developer behind executive decisions. Where FREAK goes, I decide. <br /> I had no idea, that I was a part of this project. :P </p>
             
         </div>
        
         </div>
-    <a href="https://github.com/Megamer-studios" target="_blank"><u>GitHub</u></a>
+    <a href="https://github.com/Megamer-studios" target="_blank">GitHub</a>
   
 </div>
 <div class="containerish">
@@ -159,12 +164,12 @@
     <div style="display: flex; margin-left: 0.5rem;">
         <img style="width: 10rem; height:10rem;"  src="Media/147689545.jpg" />
         <div style="flex-direction: column;">
-            <h2>Otto Apocalypse / Fanta Fork  </h2>
+            <h2 style="margin-left: 0.5rem;">Otto Apocalypse / Fanta Fork  </h2>
             <p>Weeb, came with idea.</p>
            
         </div>
     </div>
-    <a href="https://github.com/OttoApocalypse69" target="_blank"><u>GitHub</u></a>
+    <a href="https://github.com/OttoApocalypse69" target="_blank">GitHub</a>
 
 </div>
 <div class="containerish">
@@ -174,12 +179,12 @@
     <div style="display: flex; margin-left: 0.5rem;">
         <img style="width: 10rem; height:10rem;"  src="Media/claude-color.png" />
         <div style="flex-direction: column;">
-            <h2>Claude Code </h2>
+            <h2 style="margin-left: 0.5rem;">Claude Code </h2>
             <p>Claude is a series of large language models developed by Anthropic and first released in 2023. Its name has been described both as a tribute to Claude Shannon, who pioneered information theory, and as a friendly, male-gendered counterpart to AI assistants like Alexa and Siri.</p>
             
         </div>  
     </div>
-    <a href="https://claude.ai/new" target="_blank"><u>Claude</u></a>
+    <a href="https://claude.ai/new" target="_blank">Claude</a>
 
 </div>
 @code{
@@ -187,6 +192,11 @@
     public async Task Copy1()
     {
         await JSRuntime.InvokeVoidAsync("clipboardCopy.copyText", "irm https://raw.githubusercontent.com/FREAK-lang-dev/Freak-lang/main/install.ps1 | iex");
+
+    }
+    public async Task Copy3()
+    {
+        await JSRuntime.InvokeVoidAsync("clipboardCopy.copyText", "curl -fsSL https://raw.githubusercontent.com/FREAK-lang-dev/Freak-lang/main/install.sh | bash");
 
     }
     public async Task Copy2()
