@@ -1,8 +1,17 @@
 .navbar {
     background-color: #1a1a3d;
 }
-
-
+a :hover{
+    cursor: pointer;
+}
+.containerish {
+    position: relative;
+    background-image: linear-gradient(#f5429b, #630a37);
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    margin: 1rem;
+}
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }

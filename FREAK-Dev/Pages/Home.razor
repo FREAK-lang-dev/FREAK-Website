@@ -1,6 +1,6 @@
 ﻿@page "/"
 @using FREAK_Dev.Components
-
+@inject IJSRuntime JSRuntime
 <PageTitle>FREAK - Home</PageTitle>
 <h2>Q / A</h2>
 <label class="title">Q: Why FREAK?</label>
@@ -53,9 +53,9 @@
     <div style="background-color: #040414; height: 10rem; font-family: Pixel Cyr Normal;">
         <div style="height: 2.5rem;  " ></div>
         <p>
-        <span style="color: rgb(255, 107, 168);">pilot</span> <span style="color: rgb(0, 229, 204);">word</span> = <span style="color: rgb(255, 204, 102);">"Shirogane Takeru"</span> <br />
-        <span style="color: rgb(255, 107, 168);">pilot</span> <span style="color: rgb(0, 229, 204);">int</span> = <span style="color: rgb(255, 153, 102);">9001</span><br />
-        <span style="color: rgb(255, 107, 168);">pilot</span> <span style="color: rgb(0, 229, 204);">bool</span> = <span style="color: rgb(255, 107, 168);">true</span>
+        <span style="color: rgb(255, 107, 168);">pilot</span> name = <span style="color: rgb(255, 204, 102);">"Shirogane Takeru"</span> <br />
+        <span style="color: rgb(255, 107, 168);">pilot</span> power = <span style="color: rgb(255, 153, 102);">9001</span><br />
+        <span style="color: rgb(255, 107, 168);">pilot</span> active = <span style="color: rgb(255, 107, 168);">true</span>
         </p>
        
         </div>
@@ -77,20 +77,122 @@
 </h1>
 <div style="  display: grid;  grid-template-columns: auto auto auto;  padding: 0.5rem;">
     <div class="container">
-        <label class="title">01 - ANIME LOGIC LAYER</label>
+        <div style="height: 1.5rem;"></div>
+        <label class="title">01 - <span style="color: #f0146e;">ANIME</span> LOGIC LAYER</label>
+        <div style="height: 0.5rem;"></div>
         <p>Death flag detection. Route types. Power level enforcement at compile time. PLUS ULTRA, NAKAMA, and TSUNDERE operators that compile to real C. It's not a joke. It compiles.</p>
     </div>
     <div class="container">
-        <label class="title">02 - MEMORY SAFETY</label>
+        <div style="height: 1.5rem;"></div>
+        <label class="title">02 - MEMORY <span style="color: #f0146e;">SAFETY</span></label>
+        <div style="height: 0.5rem;"></div>
         <p>Ownership system with<span style="color: #f0146e;"> lend </span> and <span style="color: #f0146e;">lend mut</span>. No null — ever.<span style="color: #f0146e;"> maybe&lt;T&gt;</span> and <span style="color: #f0146e;">result &lt;T,E&gt;</span> everywhere. The borrow checker delivers errors in character voice.</p>
     </div>
         <div class="container">
-        <label class="title">03 - SQUADRON CONCURRENCY</label>
+        <div style="height: 1.5rem;"></div>
+        <label class="title">03 - SQUADRON <span style="color: #f0146e;">CONCURRENCY</span></label>
+        <div style="height: 0.5rem;"></div>
         <p>Threads are sorties. Channels are comms. Mutexes are briefing rooms. The XM3 concurrency model races parallel branches and commits the fastest valid result.</p>
     </div>
     <div class="container">
-        <label class="title">04 - REAL GENERICS</label>
-        <p>Full &lt;T&gt; generic types with doctrine trait bounds. Shapes, tasks, impl blocks — all generic. Zero runtime overhead through monomorphisation.</p>
+        <div style="height: 1.5rem;"></div>
+        <label class="title">04 - REAL <span style="color: #f0146e;">GENERICS</span></label>
+        <div style="height: 0.5rem;"></div>
+        <p>Full <span style="color: #f0146e;">&lt;T&gt;</span> generic types with <span style="color: #f0146e;">doctrine</span> trait bounds. Shapes, tasks, impl blocks — all generic. Zero runtime overhead through monomorphisation.</p>
+    </div>
+    <div class="container">
+        <div style="height: 1.5rem;"></div>
+        <label class="title">05 - HANGAR <span style="color: #f0146e;">PACKAGES</span></label>
+        <div style="height: 0.5rem;"></div>
+        <p>The package manager is called Hangar because you're storing deployable units.<span style="color: #f0146e;"> freak hangar install</span>. <span style="color: #f0146e;">freak hangar launch</span>. The theming is not optional. It is doctrine.</p>
+    </div>
+    <div class="container">
+        <div style="height: 1.5rem;"></div>
+        <label class="title">06 - NARRATIVE <span style="color: #f0146e;">ERRORS</span></label>
+        <div style="height: 0.5rem;"></div>
+        <p>Type mismatches are delivered by Yuuko being sarcastic. Lifetime errors come from Meiya, formally disappointed. Unused foreshadowing is narrated by a tired Takeru who has seen this mistake four times across timelines.</p>
     </div>
 </div>
+<hr /> 
+<label class="title">03- Installation</label>
+<h1>
+    One click.
+  <span style="color: #f0146e;"> It's yours. </span>
+</h1>
+<div class="container light">
+    <label class="title">Install</label>
+    <p>irm https://raw.githubusercontent.com/FREAK-lang-dev/Freak-lang/main/install.ps1 | iex</p>
+</div>
+<div class="container light">
+    <label class="title">Install</label>
+    <p>freakc hangar init MyProject</p>
+</div>
+<div style="text-align: center;">
+    <button @onclick="Copy1" type="button" class="btn">Copy installation command</button>
+    <button @onclick="Copy2" type="button" class="btn">Copy initialization command</button>
+</div>
+<hr />
+<label class="title">04- FREAK Dev-team</label>
+<h1>
+    Who are <span style="color: #f0146e;">WE?</span> <br />
+</h1>
+<div class="containerish">
+    <div style="height: 1.5rem;"></div>
+    <label class="title">Project manager</label>
+    <div style="height: 0.5rem;"></div>
+    <div style="display: flex; margin-left: 0.5rem;">
+        <img style="width: 10rem; height:10rem;" src="Media/AkumarinPFP.png" />
+        <div style="flex-direction: column;">
+            <h2>Akumarin Kukino / Megamer-Studios </h2>
+            <p>I am the C# developer behind executive decisions. Where FREAK goes, I decide. <br /> I had no idea, that I was a part of this project. :P </p>
+            
+        </div>
        
+        </div>
+    <a href="https://github.com/Megamer-studios" target="_blank"><u>GitHub</u></a>
+  
+</div>
+<div class="containerish">
+    <div style="height: 1.5rem;"></div>
+    <label class="title">Lead programmer</label>
+    <div style="height: 0.5rem;"></div>
+    <div style="display: flex; margin-left: 0.5rem;">
+        <img style="width: 10rem; height:10rem;"  src="Media/147689545.jpg" />
+        <div style="flex-direction: column;">
+            <h2>Otto Apocalypse / Fanta Fork  </h2>
+            <p>Weeb, came with idea.</p>
+           
+        </div>
+    </div>
+    <a href="https://github.com/OttoApocalypse69" target="_blank"><u>GitHub</u></a>
+
+</div>
+<div class="containerish">
+    <div style="height: 1.5rem;"></div>
+    <label class="title">REAL Lead programmer</label>
+    <div style="height: 0.5rem;"></div>
+    <div style="display: flex; margin-left: 0.5rem;">
+        <img style="width: 10rem; height:10rem;"  src="Media/claude-color.png" />
+        <div style="flex-direction: column;">
+            <h2>Claude Code </h2>
+            <p>Claude is a series of large language models developed by Anthropic and first released in 2023. Its name has been described both as a tribute to Claude Shannon, who pioneered information theory, and as a friendly, male-gendered counterpart to AI assistants like Alexa and Siri.</p>
+            
+        </div>  
+    </div>
+    <a href="https://claude.ai/new" target="_blank"><u>Claude</u></a>
+
+</div>
+@code{
+
+    public async Task Copy1()
+    {
+        await JSRuntime.InvokeVoidAsync("clipboardCopy.copyText", "irm https://raw.githubusercontent.com/FREAK-lang-dev/Freak-lang/main/install.ps1 | iex");
+
+    }
+    public async Task Copy2()
+    {
+        await JSRuntime.InvokeVoidAsync("clipboardCopy.copyText", "freakc hangar init MyProject");
+
+
+    }
+}
